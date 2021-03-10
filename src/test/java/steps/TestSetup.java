@@ -22,8 +22,8 @@ public class TestSetup {
             caps.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS, "true");
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "6");
             caps.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/App/PreciseUnitConversion.apk");
-            caps.setCapability(MobileCapabilityType.FULL_RESET, "true");
-            caps.setCapability(MobileCapabilityType.NO_RESET, "false");
+            caps.setCapability(MobileCapabilityType.FULL_RESET, "false");
+            caps.setCapability(MobileCapabilityType.NO_RESET, "true");
             Logger.getLogger("org.openqa.selenium").setLevel(Level.OFF);
             driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
