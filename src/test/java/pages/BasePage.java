@@ -105,6 +105,24 @@ public class BasePage extends TestSetup {
         return null;
     }
 
+    public void patientlyScrollMobile(String selectorType, String selectorValue, int count) {
+        String elementXpath = "";
+        if(selectorType.equals("text")){
+            elementXpath = "//*[contains(@text,'"+selectorValue+"')]";
+        } else{
+            elementXpath = "//*[@"+selectorType+"='"+selectorValue+"')]";
+        }
+        for (int i = 0; i < count; i++) {
+            try {
+                if(driver.findElement(By.xpath(elementXpath)).isDisplayed()){
+                    break;
+                }
+            } catch (org.openqa.selenium.NoSuchElementException e) {
+                swipeUp();
+            }
+        }
+    }
+
     public MobileElement waitForVisibility(WebElement element, int seconds) {
         WebDriverWait wait = new WebDriverWait(driver, seconds);
         wait.until(ExpectedConditions.visibilityOf(element));

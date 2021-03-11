@@ -38,4 +38,14 @@ public class HomeSteps extends TestSetup{
     public void iShouldSeeResultAs(String result) {
         Assert.assertEquals(result, new HomePage().getResult());
     }
+
+    @When("^I select the \"([^\"]*)\"$")
+    public void iSelectThe(String type){
+        new HomePage().selectConversionType(type);
+    }
+
+    @Then("^I should see conversion \"([^\"]*)\" selected$")
+    public void iShouldSeeConversionSelected(String type){
+        Assert.assertTrue(new HomePage().isTypeSelected(type));
+    }
 }

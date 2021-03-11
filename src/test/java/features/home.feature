@@ -12,3 +12,14 @@ Feature: This is Home feature
     Given I am on length conversion page
     When I enter input '2'
     Then I should see result as '60.96'
+
+  Scenario Outline: User can change conversion type
+    Given I click menu bar
+    When I select the "<type>"
+    Then I should see conversion "<type>" selected
+    Examples:
+      |type  |
+      |Speed  |
+      |Time  |
+      |Energy  |
+      |Force  |
