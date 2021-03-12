@@ -18,6 +18,14 @@ public class HomePage extends BasePage{
     @AndroidFindBy(id = "img_switch")
     private MobileElement interchangeBtn;
 
+    @AndroidFindBy(xpath = "(//android.widget.ImageView)[3]")
+    private MobileElement unitChangeIcon;
+
+    public void changeUnitType(String type){
+        unitChangeIcon.click();
+        selectConversionType(type);
+
+    }
     public void clickMenu(){
         menuBar.click();
     }

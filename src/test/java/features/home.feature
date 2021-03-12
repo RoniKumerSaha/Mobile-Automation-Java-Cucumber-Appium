@@ -30,3 +30,10 @@ Feature: This is Home feature
       And I enter input '50'
       When I click the unit interchange icon
       Then I should see result as '0.005'
+      
+    Scenario: User can change unit type during conversion
+      Given I click menu bar
+      And I select the "Temperature"
+      And I enter input '45'
+      When I change unit to "Kelvin"
+      Then I should see result as '318.15'

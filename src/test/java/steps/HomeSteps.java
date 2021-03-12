@@ -53,4 +53,9 @@ public class HomeSteps extends TestSetup{
     public void iClickTheUnitInterchangeIcon() {
         new HomePage().clickInterchange();
     }
+
+    @When("^I change unit to \"([^\"]*)\"$")
+    public void iChangeUnitTo(String value){
+        new HomePage().changeUnitType(value);
+    }
 }
