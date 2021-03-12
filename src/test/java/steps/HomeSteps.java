@@ -48,4 +48,9 @@ public class HomeSteps extends TestSetup{
     public void iShouldSeeConversionSelected(String type){
         Assert.assertTrue(new HomePage().isTypeSelected(type));
     }
+
+    @When("^I click the unit interchange icon$")
+    public void iClickTheUnitInterchangeIcon() {
+        new HomePage().clickInterchange();
+    }
 }

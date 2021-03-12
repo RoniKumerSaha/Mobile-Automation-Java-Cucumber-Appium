@@ -23,3 +23,10 @@ Feature: This is Home feature
       |Time  |
       |Energy  |
       |Force  |
+
+    Scenario: User can interchange conversion unit during conversion
+      Given I click menu bar
+      And I select the "Area"
+      And I enter input '50'
+      When I click the unit interchange icon
+      Then I should see result as '0.005'

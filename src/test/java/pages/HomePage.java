@@ -15,8 +15,14 @@ public class HomePage extends BasePage{
     @AndroidFindBy(id = "target_value")
     private MobileElement result;
 
+    @AndroidFindBy(id = "img_switch")
+    private MobileElement interchangeBtn;
+
     public void clickMenu(){
         menuBar.click();
+    }
+    public void clickInterchange(){
+        interchangeBtn.click();
     }
 
     public boolean navigationDrawerDisplayed(){
@@ -24,7 +30,10 @@ public class HomePage extends BasePage{
     }
 
     public void enterValue(String value){
-        driver.findElement(By.xpath("//android.widget.Button[@text='"+value+"']")).click();
+        String[] values = value.split("");
+        for(int i=0; i<value.length(); i++){
+            driver.findElement(By.xpath("//android.widget.Button[@text='"+values[i]+"']")).click();
+        }
     }
 
     public String getResult(){
