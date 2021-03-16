@@ -41,6 +41,10 @@ public class BasePage extends TestSetup {
         new TouchAction(driver).press(PointOption.point(elm.getCenter())).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(seconds))).release().perform();
     }
 
+    public void clickElementByText(String text){
+        driver.findElement(By.xpath("//*[contains(@text,'"+text+"')]")).click();
+    }
+
     public void swipeUp() {
         Dimension size = driver.manage().window().getSize();
         int x = size.width;

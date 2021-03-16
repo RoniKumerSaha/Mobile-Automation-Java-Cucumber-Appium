@@ -50,7 +50,7 @@ public class HomePage extends BasePage{
 
     public void selectConversionType(String type){
         patientlyScrollMobile("text",type,5);
-        driver.findElement(By.xpath("//android.widget.TextView[@text='"+type+"']")).click();
+        clickElementByText(type);
     }
     public boolean isTypeSelected(String type){
         return driver.findElement(By.xpath("//android.widget.TextView[@text='"+type+"']")).isDisplayed();
