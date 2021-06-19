@@ -31,7 +31,7 @@ public class BasePage extends TestSetup {
 
     public static void sleepFor(int seconds) {
         try {
-            Thread.sleep(1000 * seconds);
+            Thread.sleep((100 * 10) * seconds);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
